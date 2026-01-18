@@ -7,6 +7,7 @@ import { ArrowRight, AlertCircle, CheckCircle2 } from 'lucide-react';
 
 export default function AnalyzePage() {
   const router = useRouter();
+
   const [text, setText] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -18,7 +19,9 @@ export default function AnalyzePage() {
     }
 
     if (text.trim().length < 100) {
-      setError('Please paste more content from your profile (at least 100 characters)');
+      setError(
+        'Please paste more content from your profile (at least 100 characters)'
+      );
       return;
     }
 
@@ -26,23 +29,32 @@ export default function AnalyzePage() {
     setError('');
 
     try {
-      const res = await fetch('http://127.0.0.1:8000/api/analyze-profile', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          profile_text: text,
-        }),
-      });
+      const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+
+      if (!API_BASE_URL) {
+        throw new Error('API base URL not configured');
+      }
+
+      const res = await fetch(
+        `${API_BASE_URL}/api/analyze-profile`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            profile_text: text,
+          }),
+        }
+      );
 
       if (!res.ok) {
-        throw new Error('Backend error');
+        throw new Error('Backend returned an error');
       }
 
       const data = await res.json();
 
-      // Store analysis result for next pages
+      // Store result for results & improve pages
       localStorage.setItem(
         'oneup_analysis_result',
         JSON.stringify(data)
@@ -50,6 +62,7 @@ export default function AnalyzePage() {
 
       router.push('/analyzing');
     } catch (err) {
+      console.error(err);
       setError('Something went wrong while analyzing. Please try again.');
       setLoading(false);
     }
@@ -98,6 +111,7 @@ export default function AnalyzePage() {
             <div className="text-sm font-medium text-gray-900 dark:text-white mb-2">
               How to copy your LinkedIn profile:
             </div>
+
             <div className="space-y-1 text-sm text-gray-600 dark:text-gray-400">
               <div className="flex items-start space-x-2">
                 <span className="text-blue-600 font-medium">1.</span>
@@ -105,15 +119,15 @@ export default function AnalyzePage() {
               </div>
               <div className="flex items-start space-x-2">
                 <span className="text-blue-600 font-medium">2.</span>
-                <span>Press Ctrl + A (or Cmd + A on Mac) to select all</span>
+                <span>Press Ctrl + A (or Cmd + A on Mac)</span>
               </div>
               <div className="flex items-start space-x-2">
                 <span className="text-blue-600 font-medium">3.</span>
-                <span>Press Ctrl + C (or Cmd + C on Mac) to copy</span>
+                <span>Press Ctrl + C (or Cmd + C on Mac)</span>
               </div>
               <div className="flex items-start space-x-2">
                 <span className="text-blue-600 font-medium">4.</span>
-                <span>Paste the content in the box above</span>
+                <span>Paste it above</span>
               </div>
             </div>
           </div>
@@ -134,8 +148,8 @@ export default function AnalyzePage() {
                 className="text-green-500 flex-shrink-0 mt-0.5"
               />
               <div>
-                <strong>Privacy first:</strong> Your profile data is analyzed
-                instantly and never stored.
+                <strong>Privacy first:</strong> Your profile is analyzed instantly
+                and never stored.
               </div>
             </div>
           </div>
