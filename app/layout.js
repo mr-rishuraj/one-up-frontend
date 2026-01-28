@@ -4,11 +4,6 @@ import Providers from "./providers";
 export const metadata = {
   title: "One-Up",
   description: "AI-powered profile & career intelligence",
-  icons: {
-    icon: "/logo.jpg",
-    shortcut: "/logo.jpg",
-    apple: "/logo.jpg",
-  },
 };
 
 export default function RootLayout({ children }) {
