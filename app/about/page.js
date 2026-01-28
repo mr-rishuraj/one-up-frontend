@@ -11,11 +11,11 @@ export default function AboutPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          <h1 className="text-4xl sm:text-5xl font-bold mb-8">About One-Up</h1>
+          <h1 className="text-4xl sm:text-5xl font-bold mb-8">About One-Upp</h1>
 
           <div className="prose prose-lg dark:prose-invert max-w-none">
             <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
-              One-Up is an AI-powered LinkedIn analysis tool that gives you brutally honest
+              One-Upp is an AI-powered LinkedIn analysis tool that gives you brutally honest
               feedback on your profile.
             </p>
 
@@ -28,7 +28,7 @@ export default function AboutPage() {
 
             <h2 className="text-2xl font-bold mt-12 mb-4">Our Approach</h2>
             <p className="text-gray-600 dark:text-gray-400 mb-6">
-              One-Up analyzes your profile using the same criteria top recruiters and hiring
+              One-Upp analyzes your profile using the same criteria top recruiters and hiring
               managers use. We evaluate headline clarity, achievement quantification, profile
               consistency, keyword optimization, and overall impact. Then we give you a score and
               specific improvements to implement.
@@ -38,7 +38,7 @@ export default function AboutPage() {
             <p className="text-gray-600 dark:text-gray-400 mb-6">
               After reviewing thousands of LinkedIn profiles, we noticed the same patterns. Strong
               candidates with weak profiles getting overlooked. Generic descriptions that say
-              nothing. Missing quantified achievements. We built One-Up to solve this
+              nothing. Missing quantified achievements. We built One-Upp to solve this
               systematically.
             </p>
 
