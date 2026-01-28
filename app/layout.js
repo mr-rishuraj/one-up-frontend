@@ -2,7 +2,7 @@ import "./globals.css";
 import Providers from "./providers";
 
 export const metadata = {
-  title: "One-Up",
+  title: "One-Upp",
   description: "AI-powered profile & career intelligence",
 };
 
