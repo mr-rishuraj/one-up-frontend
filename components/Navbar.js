@@ -23,7 +23,7 @@ export default function Navbar({ theme, toggleTheme }) {
               onClick={() => router.push("/")}
               className="text-xl font-bold text-gray-900 dark:text-white"
             >
-              One-Up
+              One-Upp
             </button>
           </div>
 

@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
             <div className="text-xl font-bold text-gray-900 dark:text-white mb-4">
-              One-Up
+              One-Upp
             </div>
             <p className="text-gray-600 dark:text-gray-400 text-sm max-w-md">
               AI-powered LinkedIn analysis that gives you the competitive edge in
@@ -63,7 +63,7 @@ export default function Footer() {
         {/* Disclaimer */}
         <div className="mt-10 p-4 rounded-lg bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
           <p className="text-xs text-gray-500 dark:text-gray-400 text-center max-w-4xl mx-auto">
-            <strong>Disclaimer:</strong> One-Up provides AI-generated insights
+            <strong>Disclaimer:</strong> One-Upp provides AI-generated insights
             based on the text you share. Results may vary depending on profile
             completeness, formatting, and copied content. This analysis is
             intended as guidance, not a definitive evaluation.
@@ -72,7 +72,7 @@ export default function Footer() {
 
         <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-800">
           <p className="text-sm text-gray-500 dark:text-gray-500 text-center">
-            © 2026 One-Up. All rights reserved.
+            © 2026 One-Upp. All rights reserved.
           </p>
         </div>
       </div>
